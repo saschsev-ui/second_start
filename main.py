@@ -12,4 +12,4 @@ if alter < 18:
     print("Du bist noch minderjährig.")
     print(f"Du bist in {18 - alter} Jahren volljährig.")
 else:
-    print("Du bist volljährig.")
+    print("Du bist volljährig. Tolle Sache!")
