@@ -1,5 +1,6 @@
 import random
 import tkinter as tk
+from tkinter import TclError
 
 GRID_WIDTH = 10
 GRID_HEIGHT = 20
@@ -199,7 +200,13 @@ class Tetris:
 
 
 def main():
-    root = tk.Tk()
+    try:
+        root = tk.Tk()
+    except TclError as exc:
+        raise SystemExit(
+            "Tkinter konnte kein Fenster erstellen. "
+            "Bitte die App in einer grafischen Umgebung mit gesetztem DISPLAY starten."
+        ) from exc
     Tetris(root)
     root.mainloop()
 
